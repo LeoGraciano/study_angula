@@ -6,8 +6,16 @@
       [(ngModel)]="people.name" #name="ngModel"
       >
       <div *ngIf="name.errors && (name.dirty || name.touched)" class="alert alert-danger">
-        <span [hidden]="!name.errors?.['required']">Digite o nome da pessoa.</span>
-        <span [hidden]="!name.errors?.['minlength']">O Nome deve conter ao menos 3 caracteres</span>
+        <span *ngIf="name.errors?.['required']">Digite o nome da pessoa.</span>
+        <span *ngIf="name.errors?.['minlength']">O Nome deve conter ao menos 3 caracteres</span>
+      </div>
+    </div>
+    <div class="form-group mb-3">
+      <label for="birthday" class="form-label">Nascimento:</label>
+      <input type="date" name="birthday" id="birthday" class="form-control" required
+      [(ngModel)]="people.birthday" #birthday="ngModel">
+      <div *ngIf="birthday.errors && (birthday.dirty || birthday.touched)"class="alert alert-danger">
+        <span *ngIf="birthday.errors?.['required']">Digite data de nascimento</span>
       </div>
     </div>
     <div class="form-group mb-3">
@@ -15,7 +23,7 @@
       <input type="number" name="age" id="age" class="form-control" required
       [(ngModel)]="people.age" #age="ngModel">
       <div *ngIf="age.errors && (age.dirty || age.touched)"class="alert alert-danger">
-        <span [hidden]="!age.errors?.['required']">Digite a idade da pessoa.</span>
+        <span *ngIf="age.errors?.['required']">Digite a idade da pessoa.</span>
       </div>
     </div>
     <div class="btn-group">

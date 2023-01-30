@@ -9,6 +9,7 @@
       <tr>
         <th>None</th>
         <th>Idade</th>
+        <th>Nascido em</th>
         <th class="text-center">
           <a [routerLink]="['/pessoas/novo']" title="Novo" alt="Novo" class="btn btn-xs btn-success">
             <i class="fa fa-plus" aria-hidden="true"></i>  Novo
@@ -20,6 +21,7 @@
         <tr *ngFor="let people of peoples" class="table-primary" >
           <td scope="row">{{people.name}}</td>
           <td>{{people.age}}</td>
+          <td>{{people.birthday}}</td>
           <td>
             <div class="btn-group">
               <a [routerLink]="['/pessoas/editar', people.id]" title="Editar" alt="Editar" class="btn btn-btn-xs btn-info"><i class="fa fa-edit" aria-hidden="true"></i> Editar</a>
