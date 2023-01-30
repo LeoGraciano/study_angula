@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ListPeopleComponent } from './people/list-people/list-people.component';
-import { InsertPeopleComponent } from './people/insert-people/insert-people.component';
-import { UpdatePeopleComponent } from './people/update-people/update-people.component';
+import { ListPeopleComponent } from './people/components/list-people/list-people.component';
+import { InsertPeopleComponent } from './people/components/insert-people/insert-people.component';
+import { UpdatePeopleComponent } from './people/components/update-people/update-people.component';
 
 const routes: Routes = [
   {

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { People } from 'src/app/shared/models/people.model';
-import { PeopleService } from '../services/people.service';
+import { PeopleService } from '../../services/people.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({

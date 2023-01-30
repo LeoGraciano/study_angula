@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PeopleService } from './services/people.service';
-import { ListPeopleComponent } from './list-people/list-people.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { InsertPeopleComponent } from './insert-people/insert-people.component';
-import { UpdatePeopleComponent } from './update-people/update-people.component';
+import { ListPeopleComponent } from './components/list-people/list-people.component';
+import { InsertPeopleComponent } from './components/insert-people/insert-people.component';
+import { UpdatePeopleComponent } from './components/update-people/update-people.component';
 
 
 @NgModule({
