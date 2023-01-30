@@ -1,0 +1,35 @@
+<div class="well">
+  <form #formPeople="ngForm">
+    <div class="form-group mb-3">
+      <label for="name" class="form-label">Nome:</label>
+      <input type="text" name="name" id="name" class="form-control" minlength="3" required
+      [(ngModel)]="people.name" #name="ngModel"
+      >
+      <div *ngIf="name.errors && (name.dirty || name.touched)" class="alert alert-danger">
+        <span [hidden]="!name.errors?.['required']">Digite o nome da pessoa.</span>
+        <span [hidden]="!name.errors?.['minlength']">O Nome deve conter ao menos 3 caracteres</span>
+      </div>
+    </div>
+    <div class="form-group mb-3">
+      <label for="age" class="form-label">Idade:</label>
+      <input type="number" name="age" id="age" class="form-control" required
+      [(ngModel)]="people.age" #age="ngModel">
+      <div *ngIf="age.errors && (age.dirty || age.touched)"class="alert alert-danger">
+        <span [hidden]="!age.errors?.['required']">Digite a idade da pessoa.</span>
+      </div>
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-primary"
+      (click)="insert()"
+      [disabled]="!formPeople.form.valid"
+      >
+        <i class="fa fa-save" aria-hidden="true"></i>
+        Salvar
+      </button>
+      <a class="btn btn-secondary" [routerLink]="['/pessoas']">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        Voltar
+      </a>
+    </div>
+  </form>
+</div>
