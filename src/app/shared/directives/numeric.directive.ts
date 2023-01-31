@@ -18,12 +18,11 @@ export class NumericDirective implements ControlValueAccessor {
 
 
   @HostListener('keyup', ['$event'])
-  onKeyUp($event: any): void {
-    let value: string = $event.target.value;
+  onKeyUp($event: any) {
+    let value = $event.target.value;
 
-    value = value.replaceAll('/[\D]/g', '');
+    value = value.replace(/[\D]/g, '');
     $event.target.value = value;
-
     this.onChange(value);
   }
 
@@ -32,7 +31,7 @@ export class NumericDirective implements ControlValueAccessor {
   }
 
   registerOnTouched(fn: any): void {
-    this.onChange = fn;
+    this.onTouched = fn;
   }
 
   writeValue(obj: any): void {

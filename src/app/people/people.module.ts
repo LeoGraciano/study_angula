@@ -7,6 +7,11 @@ import { ListPeopleComponent } from './components/list-people/list-people.compon
 import { InsertPeopleComponent } from './components/insert-people/insert-people.component';
 import { UpdatePeopleComponent } from './components/update-people/update-people.component';
 import { NumericDirective } from '../shared/directives/numeric.directive';
+import { MinValidatorDirective } from '../shared/directives/min-validator.directive';
+
+import { IConfig, NgxMaskDirective, NgxMaskPipe, provideEnvironmentNgxMask } from 'ngx-mask';
+
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 
 
 @NgModule({
@@ -14,15 +19,19 @@ import { NumericDirective } from '../shared/directives/numeric.directive';
     ListPeopleComponent,
     InsertPeopleComponent,
     UpdatePeopleComponent,
-    NumericDirective
+    NumericDirective,
+    MinValidatorDirective,
   ],
   imports: [
     CommonModule,
     RouterModule,
     FormsModule,
+    NgxMaskDirective,
+    NgxMaskPipe
   ],
   providers: [
-    PeopleService
+    PeopleService,
+    provideEnvironmentNgxMask(),
   ]
 })
 export class PeopleModule { }
