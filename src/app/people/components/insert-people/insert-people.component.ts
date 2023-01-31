@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { People } from 'src/app/shared/models/people.model';
 import { PeopleService } from '../../services/people.service';
 import { Router } from '@angular/router';
 
+import { People } from 'src/app/shared';
 @Component({
   selector: 'app-insert-people',
   templateUrl: './insert-people.component.html',

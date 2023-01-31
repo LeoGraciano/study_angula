@@ -6,10 +6,10 @@ import { FormsModule } from '@angular/forms';
 import { ListPeopleComponent } from './components/list-people/list-people.component';
 import { InsertPeopleComponent } from './components/insert-people/insert-people.component';
 import { UpdatePeopleComponent } from './components/update-people/update-people.component';
-import { NumericDirective } from '../shared/directives/numeric.directive';
-import { MinValidatorDirective } from '../shared/directives/min-validator.directive';
 
 import { IConfig, NgxMaskDirective, NgxMaskPipe, provideEnvironmentNgxMask } from 'ngx-mask';
+import { SharedModule } from '../shared';
+import { ModalPeopleComponent } from './modal-people/modal-people.component';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 
@@ -19,15 +19,15 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     ListPeopleComponent,
     InsertPeopleComponent,
     UpdatePeopleComponent,
-    NumericDirective,
-    MinValidatorDirective,
+    ModalPeopleComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
     FormsModule,
+    SharedModule,
     NgxMaskDirective,
-    NgxMaskPipe
+    NgxMaskPipe,
   ],
   providers: [
     PeopleService,
