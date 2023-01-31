@@ -21,7 +21,7 @@
     <div class="form-group mb-3">
       <label for="age" class="form-label">Idade:</label>
       <input type="number" name="age" id="age" class="form-control" required
-      [(ngModel)]="people.age" #age="ngModel">
+      [(ngModel)]="people.age" #age="ngModel" numeric>
       <div *ngIf="age.errors && (age.dirty || age.touched)"class="alert alert-danger">
         <span *ngIf="age.errors?.['required']">Digite a idade da pessoa.</span>
       </div>

@@ -6,13 +6,15 @@ import { FormsModule } from '@angular/forms';
 import { ListPeopleComponent } from './components/list-people/list-people.component';
 import { InsertPeopleComponent } from './components/insert-people/insert-people.component';
 import { UpdatePeopleComponent } from './components/update-people/update-people.component';
+import { NumericDirective } from '../shared/directives/numeric.directive';
 
 
 @NgModule({
   declarations: [
     ListPeopleComponent,
     InsertPeopleComponent,
-    UpdatePeopleComponent
+    UpdatePeopleComponent,
+    NumericDirective
   ],
   imports: [
     CommonModule,
